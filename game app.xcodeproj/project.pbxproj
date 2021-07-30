@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		B264E4BF26B3A703006E461E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4BE26B3A703006E461E /* AppDelegate.swift */; };
 		B264E4C126B3A703006E461E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4C026B3A703006E461E /* SceneDelegate.swift */; };
-		B264E4C326B3A703006E461E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4C226B3A703006E461E /* ViewController.swift */; };
+		B264E4C326B3A703006E461E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4C226B3A703006E461E /* StartViewController.swift */; };
 		B264E4C626B3A703006E461E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B264E4C426B3A703006E461E /* Main.storyboard */; };
 		B264E4C826B3A705006E461E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B264E4C726B3A705006E461E /* Assets.xcassets */; };
 		B264E4CB26B3A705006E461E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B264E4C926B3A705006E461E /* LaunchScreen.storyboard */; };
 		B264E4D326B3A78E006E461E /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B264E4D226B3A78E006E461E /* Readme.md */; };
+		B264E4D826B3B9F8006E461E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4D726B3B9F8006E461E /* MainViewController.swift */; };
+		B264E4DA26B3BA68006E461E /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4D926B3BA68006E461E /* EndViewController.swift */; };
+		B264E4DC26B3D13C006E461E /* ReSumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4DB26B3D13C006E461E /* ReSumeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B264E4BB26B3A703006E461E /* game app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "game app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B264E4BE26B3A703006E461E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B264E4C026B3A703006E461E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B264E4C226B3A703006E461E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B264E4C226B3A703006E461E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B264E4C526B3A703006E461E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B264E4C726B3A705006E461E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B264E4CA26B3A705006E461E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B264E4CC26B3A705006E461E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B264E4D226B3A78E006E461E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		B264E4D726B3B9F8006E461E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B264E4D926B3BA68006E461E /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		B264E4DB26B3D13C006E461E /* ReSumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSumeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,43 @@
 		B264E4BD26B3A703006E461E /* game app */ = {
 			isa = PBXGroup;
 			children = (
+				B264E4D626B3B9BF006E461E /* Controllers */,
+				B264E4D526B3B9B4006E461E /* Models */,
+				B264E4D426B3B887006E461E /* Views */,
 				B264E4BE26B3A703006E461E /* AppDelegate.swift */,
 				B264E4C026B3A703006E461E /* SceneDelegate.swift */,
-				B264E4C226B3A703006E461E /* ViewController.swift */,
-				B264E4C426B3A703006E461E /* Main.storyboard */,
 				B264E4C726B3A705006E461E /* Assets.xcassets */,
-				B264E4C926B3A705006E461E /* LaunchScreen.storyboard */,
 				B264E4CC26B3A705006E461E /* Info.plist */,
 				B264E4D226B3A78E006E461E /* Readme.md */,
 			);
 			path = "game app";
+			sourceTree = "<group>";
+		};
+		B264E4D426B3B887006E461E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B264E4C926B3A705006E461E /* LaunchScreen.storyboard */,
+				B264E4C426B3A703006E461E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B264E4D526B3B9B4006E461E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B264E4D626B3B9BF006E461E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B264E4C226B3A703006E461E /* StartViewController.swift */,
+				B264E4D726B3B9F8006E461E /* MainViewController.swift */,
+				B264E4D926B3BA68006E461E /* EndViewController.swift */,
+				B264E4DB26B3D13C006E461E /* ReSumeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B264E4C326B3A703006E461E /* ViewController.swift in Sources */,
+				B264E4C326B3A703006E461E /* StartViewController.swift in Sources */,
+				B264E4DC26B3D13C006E461E /* ReSumeViewController.swift in Sources */,
+				B264E4DA26B3BA68006E461E /* EndViewController.swift in Sources */,
 				B264E4BF26B3A703006E461E /* AppDelegate.swift in Sources */,
 				B264E4C126B3A703006E461E /* SceneDelegate.swift in Sources */,
+				B264E4D826B3B9F8006E461E /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
