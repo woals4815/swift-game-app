@@ -10,10 +10,11 @@ import UIKit
 class EndViewController: UIViewController {
     @IBOutlet weak var totalStairsText: UILabel!
     @IBOutlet weak var timeText: UILabel!
+    var userStep = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        totalStairsText.text = "\(self.userStep)"
         // Do any additional setup after loading the view.
     }
     @IBAction func tabRestartBtn(_ sender: UIButton) {

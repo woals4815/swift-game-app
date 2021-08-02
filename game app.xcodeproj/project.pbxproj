@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B215C35426B510EE003D54B2 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215C35326B510EE003D54B2 /* NavigationController.swift */; };
 		B264E4BF26B3A703006E461E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4BE26B3A703006E461E /* AppDelegate.swift */; };
 		B264E4C126B3A703006E461E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4C026B3A703006E461E /* SceneDelegate.swift */; };
 		B264E4C326B3A703006E461E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264E4C226B3A703006E461E /* StartViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B215C35326B510EE003D54B2 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		B264E4BB26B3A703006E461E /* game app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "game app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B264E4BE26B3A703006E461E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B264E4C026B3A703006E461E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				B264E4D726B3B9F8006E461E /* MainViewController.swift */,
 				B264E4D926B3BA68006E461E /* EndViewController.swift */,
 				B264E4DB26B3D13C006E461E /* ReSumeViewController.swift */,
+				B215C35326B510EE003D54B2 /* NavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				B264E4DA26B3BA68006E461E /* EndViewController.swift in Sources */,
 				B264E4BF26B3A703006E461E /* AppDelegate.swift in Sources */,
 				B264E4C126B3A703006E461E /* SceneDelegate.swift in Sources */,
+				B215C35426B510EE003D54B2 /* NavigationController.swift in Sources */,
 				B264E4D826B3B9F8006E461E /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

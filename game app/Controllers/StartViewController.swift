@@ -7,23 +7,38 @@
 
 import UIKit
 
+
+//MARK: StartViewController
 class StartViewController: UIViewController {
-    @IBOutlet weak var gameTitle: UILabel!
-    @IBOutlet weak var startBtn: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
     
+    @IBOutlet weak var startBtn: UIButton!
+    //MARK: StartViewController BackgrondImageView
+    var imageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.image = UIImage(named: "startImg")
+        imageView.contentMode = .scaleToFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        gameTitle.text = "무한 계단"
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "infinite-stairs")!)
-        stackView.layer.masksToBounds = true
-        stackView.layer.cornerRadius = 10
+        
+        //Add imageView in main view
+        self.view.insertSubview(imageView, at: 0)
+        //Add contraints in imageView
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        startBtn.layer.masksToBounds = true
+        startBtn.layer.cornerRadius = 10
+        startBtn.layer.borderWidth = 1
         
     }
-    @IBAction func tabStartBtn(_ sender: Any) {
-        print("hello")
+    @IBAction func tabStartBtn(_ sender: UIButton) {
     }
     
 }
