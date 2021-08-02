@@ -13,8 +13,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var turnBtn: UIButton!
     @IBOutlet weak var timeBar: UIProgressView!
     
-    let screenX = [390,330,270,210,150,90,30]
-    
     //유저가 계단 누른 수
     var userStep = 0
     //현재 왼쪽을 향해 있는 지
@@ -22,7 +20,7 @@ class MainViewController: UIViewController {
     //타이머 초기화
     var timer = Timer()
     //음 총 시간? 
-    var totalTime = 3
+    var totalTime = 180
     
     var isStarted = false
     
@@ -30,6 +28,9 @@ class MainViewController: UIViewController {
     
     let charHeight = 80
     let charWidth = 60
+    
+    let inbound = 30
+    let outbound = 330
     
     let brickHeight = 30
     let brickWidth = 60
@@ -68,16 +69,45 @@ class MainViewController: UIViewController {
             let img = UIImage(named: imgName)
             let imgView = UIImageView(image: img)
             imgView.frame = CGRect(x: 390-(i+1)*brickWidth, y: 844-(i+1)*brickHeight, width: brickWidth, height: brickHeight)
-            //            print("\(i+1)번째 벽돌: \(imgView)")
+            self.subView.addSubview(imgView)
+//            print(imgView.frame.origin.x)
+        }
+        for i in 0...4 {
+            let imgName = "brick"
+            let img = UIImage(named: imgName)
+            let imgView = UIImageView(image: img)
+            imgView.frame = CGRect(x: 30+(i+1)*brickWidth, y: 664-(i+1)*brickHeight, width: brickWidth, height: brickHeight)
             self.subView.addSubview(imgView)
         }
-        //        for i in 0...6 {
-        //            let imgName = "brick"
-        //            let img = UIImage(named: imgName)
-        //            let imgView = UIImageView(image: img)
-        //            imgView.frame = CGRect(x: 30 + i*brickWidth, y: 664-i*brickHeight, width: brickWidth, height: brickHeight)
-        //            self.subView.addSubview(imgView)
-        //        }
+        for i in 0...4 {
+            let imgName = "brick"
+            let img = UIImage(named: imgName)
+            let imgView = UIImageView(image: img)
+            imgView.frame = CGRect(x: 330-(i+1)*brickWidth, y: 514-(i+1)*brickHeight, width: brickWidth, height: brickHeight)
+            self.subView.addSubview(imgView)
+        }
+        for i in 0...4 {
+            let imgName = "brick"
+            let img = UIImage(named: imgName)
+            let imgView = UIImageView(image: img)
+            imgView.frame = CGRect(x: 30+(i+1)*brickWidth, y: 364-(i+1)*brickHeight, width: brickWidth, height: brickHeight)
+            self.subView.addSubview(imgView)
+        }
+        for i in 0...2 {
+            let imgName = "brick"
+            let img = UIImage(named: imgName)
+            let imgView = UIImageView(image: img)
+            imgView.frame = CGRect(x: 330-(i+1)*brickWidth, y: 214-(i+1)*brickHeight, width: brickWidth, height: brickHeight)
+            self.subView.addSubview(imgView)
+        }
+        for i in 0...2 {
+            let imgName = "brick"
+            let img = UIImage(named: imgName)
+            let imgView = UIImageView(image: img)
+            imgView.frame = CGRect(x: 150+(i+1)*brickWidth, y: 124-(i+1)*brickHeight, width: brickWidth, height: brickHeight)
+            self.subView.addSubview(imgView)
+        }
+//        for i in 0..
     }
     //MARK: prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,9 +121,11 @@ class MainViewController: UIViewController {
         if isLeft{
             moveLeft()
             timeChangeWhenMove()
+            checkBoundary()
         } else {
             moveRight()
             timeChangeWhenMove()
+            checkBoundary()
         }
     }
     //MARK: move left function
@@ -113,15 +145,17 @@ class MainViewController: UIViewController {
             turnToRight()
             changeSubViewPort()
             timeChangeWhenMove()
+            checkBoundary()
         } else {
             turnToLeft()
             changeSubViewPort()
             timeChangeWhenMove()
+            checkBoundary()
         }
     }
     //MARK: startTime func
     private func startTime() {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(printTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1/60, target: self, selector: #selector(printTime), userInfo: nil, repeats: true)
     }
     //MARK: Turn to right function
     private func turnToRight() {
@@ -146,8 +180,8 @@ class MainViewController: UIViewController {
                 self.presentModal()
             }
         }
+        timeBar.progress = Float(totalTime)/180
         totalTime -= 1
-        timeBar.progress = Float(totalTime+1)/3
     }
     //MARK: performSegue func
     private func presentModal() {
@@ -165,11 +199,26 @@ class MainViewController: UIViewController {
             }
             isStarted = true
         } else {
-            totalTime = 3
+            totalTime = 180
             timer.invalidate()
             timeQueue.sync {
                 self.startTime()
             }
+        }
+    }
+    //MARK: check character horizontal boundary
+    private func checkBoundary() {
+        let characterHorizon = charImgView?.frame.origin.x
+        let checkblockIndex = userStep+1
+        if checkblockIndex == subView.subviews.count {
+            return
+        }
+        let blockHorizon = subView.subviews[checkblockIndex].frame.origin.x
+        if characterHorizon != blockHorizon {
+            usleep(1000000)
+            totalTime = 0
+        } else {
+            return
         }
     }
 }
