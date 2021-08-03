@@ -273,7 +273,7 @@
                                                 </constraints>
                                                 <state key="normal" image="exit"/>
                                                 <connections>
-                                                    <action selector="tabExitBtn:" destination="6aB-6D-muT" eventType="touchUpInside" id="bZR-kg-2dB"/>
+                                                    <segue destination="hJQ-rz-NkZ" kind="unwind" identifier="unwindToStart" unwindAction="unwindToStart:" id="Qum-5L-mB0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -304,8 +304,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wx4-DF-bP4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="hJQ-rz-NkZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="108"/>
+            <point key="canvasLocation" x="1467" y="-611"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZJp-Er-4Eo">

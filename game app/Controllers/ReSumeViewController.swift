@@ -18,5 +18,7 @@ class ReSumeViewController: UIViewController {
     }
     
     @IBAction func tabExitBtn(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "unwindToStart", sender: self)
     }
 }

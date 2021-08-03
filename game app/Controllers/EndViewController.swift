@@ -19,8 +19,6 @@ class EndViewController: UIViewController {
     }
     @IBAction func tabRestartBtn(_ sender: UIButton) {
     }
-    @IBAction func tabExitBtn(_ sender: UIButton) {
-    }
     
     
 
